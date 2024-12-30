@@ -25,28 +25,11 @@
         .hero {
             background: linear-gradient(45deg, var(--secondary), var(--background));
             padding: 4rem 2rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 2rem;
-        }
-
-        .hero-content {
-            flex: 1;
             text-align: center;
-        }
-
-        .hero-image {
-            flex: 1;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
-        }
-
-        .promo-image {
-            max-width: 100%;
-            border-radius: 12px;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+            justify-content: center;
         }
 
         .logo {
@@ -206,15 +189,10 @@
 </head>
 <body>
     <div class="hero">
-        <div class="hero-content">
-            <img src="assets/ghostype.png" alt="Ghostype Logo - A friendly ghost with a lightning bolt" class="logo">
-            <h1>Ghostype</h1>
-            <p>Supercharge your ChatGPT experience with AI-powered text expansion and smart navigation</p>
-            <a href="https://chrome.google.com/webstore/detail/ghostype" class="cta-button">Add to Chrome</a>
-        </div>
-        <div class="hero-image">
-            <img src="assets/improved_promotional_tile_440x280.png" alt="Ghostype in action" class="promo-image">
-        </div>
+        <img src="assets/ghostype.png" alt="Ghostype Logo - A friendly ghost with a lightning bolt" class="logo">
+        <h1>Ghostype</h1>
+        <p>Supercharge your ChatGPT experience with AI-powered text expansion and smart navigation</p>
+        <a href="https://chromewebstore.google.com/detail/ghostype/oigaibkppeamhdagigbnleokjolbdmfa" class="cta-button">Add to Chrome</a>
     </div>
 
     <div class="features">
