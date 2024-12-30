@@ -25,7 +25,28 @@
         .hero {
             background: linear-gradient(45deg, var(--secondary), var(--background));
             padding: 4rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+
+        .hero-content {
+            flex: 1;
             text-align: center;
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .promo-image {
+            max-width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
         }
 
         .logo {
@@ -70,11 +91,45 @@
             padding: 0 2rem;
         }
 
+        .feature-highlight {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+            margin: 4rem 0;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 16px;
+        }
+
+        .feature-highlight.reverse {
+            flex-direction: row-reverse;
+        }
+
+        .feature-text {
+            flex: 1;
+        }
+
+        .feature-image {
+            flex: 1;
+        }
+
+        .feature-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+        }
+
         .feature-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
-            margin-top: 2rem;
+            margin-top: 4rem;
+        }
+
+        .card-image {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 1rem;
         }
 
         .feature-card {
@@ -128,48 +183,112 @@
         nav a:hover {
             opacity: 1;
         }
+
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+            }
+            
+            .hero-image {
+                order: -1;
+            }
+
+            .feature-highlight {
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            .feature-highlight.reverse {
+                flex-direction: column;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="hero">
-        <img src="assets/ghostype.png" alt="Ghostype Logo - A friendly ghost with a lightning bolt" class="logo">
-        <h1>Ghostype</h1>
-        <p>Supercharge your typing with AI-powered shortcuts and text expansions</p>
-        <a href="https://chromewebstore.google.com/detail/chatgpt-shortcuts/oigaibkppeamhdagigbnleokjolbdmfa?hl=en&authuser=0" class="cta-button">
-            Add to Chrome - It's Free
-        </a>
+        <div class="hero-content">
+            <img src="assets/ghostype.png" alt="Ghostype Logo - A friendly ghost with a lightning bolt" class="logo">
+            <h1>Ghostype</h1>
+            <p>Supercharge your ChatGPT experience with AI-powered text expansion and smart navigation</p>
+            <a href="https://chrome.google.com/webstore/detail/ghostype" class="cta-button">Add to Chrome</a>
+        </div>
+        <div class="hero-image">
+            <img src="assets/improved_promotional_tile_440x280.png" alt="Ghostype in action" class="promo-image">
+        </div>
     </div>
 
     <div class="features">
-        <!-- Stats section - Uncomment when we reach these milestones
-        <div class="stats">
-            <div class="stat-item">
-                <div class="stat-number">10,000+</div>
-                <div>Active Users</div>
+        <h2>Enhance Your ChatGPT Experience</h2>
+        
+        <div class="feature-highlight">
+            <div class="feature-text">
+                <h3>Quick Prompt Management</h3>
+                <p>Create, organize, and use text expansions with our intuitive Quick Prompt system. Save time with custom templates and smart placeholders.</p>
+                <ul>
+                    <li>Slash commands for quick text insertion</li>
+                    <li>Custom template system</li>
+                    <li>Smart placeholder support</li>
+                    <li>Keyboard shortcuts</li>
+                </ul>
             </div>
-            <div class="stat-item">
-                <div class="stat-number">4.8/5</div>
-                <div>Chrome Store Rating</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">∞</div>
-                <div>Shortcuts Possible</div>
+            <div class="feature-image">
+                <img src="assets/quick_prompt_manager_overview.png" alt="Quick Prompt Manager Interface">
             </div>
         </div>
-        -->
+
+        <div class="feature-highlight reverse">
+            <div class="feature-text">
+                <h3>Smart Navigation & Controls</h3>
+                <p>Navigate through your chat history effortlessly with intuitive controls and keyboard shortcuts.</p>
+                <ul>
+                    <li>Message navigation controls</li>
+                    <li>Custom keyboard shortcuts</li>
+                    <li>Quick access buttons</li>
+                    <li>Visual feedback</li>
+                </ul>
+            </div>
+            <div class="feature-image">
+                <img src="assets/extension_settings_screen.png" alt="Extension Settings">
+            </div>
+        </div>
+
+        <div class="feature-highlight">
+            <div class="feature-text">
+                <h3>Ghost Suggestions</h3>
+                <p>Get intelligent inline suggestions as you type, with a non-intrusive ghost overlay preview.</p>
+                <ul>
+                    <li>Real-time completion suggestions</li>
+                    <li>Preview overlay</li>
+                    <li>Context-aware matching</li>
+                    <li>Customizable appearance</li>
+                </ul>
+            </div>
+            <div class="feature-image">
+                <img src="assets/edit_quick_prompt_interface.png" alt="Ghost Suggestions Interface">
+            </div>
+        </div>
 
         <div class="feature-grid">
             <div class="feature-card">
-                <h3>🚀 Smart Text Expansion</h3>
-                <p>Transform short commands into full text snippets instantly. Perfect for repetitive typing tasks.</p>
+                <img src="assets/quick_prompt_fix_example.png" alt="Smart Placeholders" class="card-image">
+                <h4>Smart Placeholders</h4>
+                <ul>
+                    <li>Dynamic timestamps</li>
+                    <li>Clipboard integration</li>
+                    <li>URL content fetching</li>
+                    <li>Custom variables</li>
+                </ul>
             </div>
+
             <div class="feature-card">
-                <h3>✨ Interactive Effects</h3>
-                <p>Delightful visual feedback with confetti animations on successful expansions.</p>
-            </div>
-            <div class="feature-card">
-                <h3>🌐 Works Everywhere</h3>
-                <p>Seamlessly integrate with any website, including ChatGPT, Gmail, and more.</p>
+                <img src="assets/celebration_effects_preview.png" alt="Visual Effects" class="card-image">
+                <h4>Delightful Experience</h4>
+                <ul>
+                    <li>Celebration effects</li>
+                    <li>Sound feedback</li>
+                    <li>Customizable UI</li>
+                    <li>Accessibility features</li>
+                </ul>
             </div>
         </div>
     </div>
